@@ -29,22 +29,69 @@ body {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(240, 185, 11, 0.08) 0%, transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(230, 57, 70, 0.08) 0%, transparent 40%),
-    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.8) 1px, transparent 0),
-    radial-gradient(1px 1px at 80% 40%, rgba(255,255,255,0.6) 1px, transparent 0),
-    radial-gradient(1px 1px at 50% 80%, rgba(255,255,255,0.7) 1px, transparent 0),
-    radial-gradient(1px 1px at 30% 70%, rgba(255,255,255,0.5) 1px, transparent 0),
-    radial-gradient(1px 1px at 90% 10%, rgba(255,255,255,0.6) 1px, transparent 0),
-    var(--bg);
-  background-size: cover, cover, 100px 100px, 150px 150px, 120px 120px, 180px 180px, 200px 200px, cover;
-  animation: twinkle 8s ease-in-out infinite alternate;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  overflow: hidden;
 }
 
-@keyframes twinkle {
-  from { opacity: 0.9; }
-  to { opacity: 1; }
+.stars::before,
+.stars::after,
+.stars .layer {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-repeat: repeat;
+  pointer-events: none;
+}
+
+.stars::before {
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0,0,0,0));
+  background-size: 200px 200px;
+  animation: starMove 50s linear infinite;
+}
+
+.stars::after {
+  background-image:
+    radial-gradient(1px 1px at 50px 50px, #fff, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 100px 150px, #eee, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 150px 20px, #fff, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 200px 100px, #ddd, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 250px 200px, #fff, rgba(0,0,0,0));
+  background-size: 250px 250px;
+  animation: starMove 100s linear infinite reverse;
+}
+
+@keyframes starMove {
+  from { transform: translateY(0); }
+  to { transform: translateY(-2000px); }
+}
+
+.four-logo-btn, .four-logo-small {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin: 0 4px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.four-logo-btn {
+  width: 28px;
+  height: 28px;
+}
+
+.four-logo-small {
+  width: 20px;
+  height: 20px;
 }
 
 .nav {
