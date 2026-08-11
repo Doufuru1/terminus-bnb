@@ -150,6 +150,25 @@ body {
   text-align: center;
   padding: 8rem 2rem 4rem;
   position: relative;
+  background: url('assets/hero-bg.jpg') center center / cover no-repeat;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 0;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%);
+  z-index: 0;
 }
 
 .hero-glow {
@@ -157,14 +176,20 @@ body {
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(240, 185, 11, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(240, 185, 11, 0.12) 0%, transparent 70%);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
+  z-index: 0;
 }
 
 .hero-content { position: relative; z-index: 1; max-width: 900px; }
+
+.hero-content .tagline,
+.hero-content .hero-desc {
+  text-shadow: 0 2px 12px rgba(0,0,0,0.8);
+}
 
 .badge {
   display: inline-block;
