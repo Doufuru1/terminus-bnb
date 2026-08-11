@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TERMINUS | BNB Chain</title>
+  <meta name="description" content="TERMINUS - First City on Mars. BNB Chain edition.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/terminus-logo.png">
+</head>
+<body>
+  <div class="stars"></div>
+
+  <nav class="nav">
+    <a href="#home" class="nav-logo">
+      <img src="assets/terminus-logo.png" alt="TERMINUS" class="logo-img">
+      <span>TERMINUS</span>
+    </a>
+    <div class="nav-links">
+      <a href="#about">关于</a>
+      <a href="#vision">愿景</a>
+      <a href="#token">代币</a>
+      <a href="#community">社区</a>
+    </div>
+    <button class="menu-toggle" aria-label="菜单">☰</button>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <div class="badge">BNB Chain 版本</div>
+      <h1 class="glitch" data-text="TERMINUS">TERMINUS</h1>
+      <p class="tagline">火星上的第一座城市 · BNB Chain 版</p>
+      <p class="hero-desc">受 Elon Musk 愿景启发，TERMINUS 是人类多行星文明的第一步。在 BNB Chain 上参与这场历史性旅程。</p>
+      <div class="hero-buttons">
+        <a href="https://pancakeswap.finance/swap?outputCurrency=0x7d74a3497856d0f463af55cd489823a98dfa6666" target="_blank" rel="noopener" class="btn btn-primary">立即购买</a>
+        <a href="https://bscscan.com/token/0x7d74a3497856d0f463af55cd489823a98dfa6666" target="_blank" rel="noopener" class="btn btn-secondary">BscScan</a>
+      </div>
+      <div class="ca-box">
+        <div class="ca-label">BNB Chain 合约地址 CA</div>
+        <div class="ca-row">
+          <code class="ca-address" id="caAddress">0x7d74a3497856d0f463af55cd489823a98dfa6666</code>
+          <button class="ca-copy" onclick="copyCA()" aria-label="复制合约地址">📋</button>
+        </div>
+        <div class="ca-hint" id="caHint">点击复制</div>
+      </div>
+    </div>
+    <div class="scroll-hint">↓</div>
+  </header>
+
+  <section class="section about" id="about">
+    <div class="container">
+      <h2 class="section-title">🚀 关于 TERMINUS</h2>
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="card-icon">🪐</div>
+          <h3>火星第一城</h3>
+          <p>TERMINUS 是红色星球上第一座可持续城市的代号，象征着创新、探索与人类的未来。</p>
+        </div>
+        <div class="about-card">
+          <div class="card-icon">🔭</div>
+          <h3>马斯克愿景</h3>
+          <p>源自 Elon Musk 对多行星文明的构想，SpaceX 的前沿技术将把人类送往火星。</p>
+        </div>
+        <div class="about-card">
+          <div class="card-icon">🌐</div>
+          <h3>BNB Chain 生态</h3>
+          <p>在 BNB Chain 上运行，低gas、高速交易，让全球社区都能轻松参与火星使命。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section vision" id="vision">
+    <div class="container">
+      <h2 class="section-title">🌌 使命愿景</h2>
+      <div class="vision-card">
+        <div class="vision-text">
+          <p>Elon Musk 将火星视为人类的下一个前沿，是我们演化为多行星物种的关键一步。他的目标是在这颗红色星球上建立 TERMINUS——第一座可持续城市。</p>
+          <p>TERMINUS 代币不仅仅是一种加密货币，它是受 Elon Musk 愿景启发的数字资产。随着 SpaceX 离实现这一宏伟目标越来越近，TERMINUS 代表着未来火星经济金融基础设施的开端。</p>
+          <p>持有 TERMINUS，您就成为了加速人类火星旅程的全球运动的一部分。</p>
+        </div>
+        <div class="vision-visual">
+          <div class="mars"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section token" id="token">
+    <div class="container">
+      <h2 class="section-title">💰 代币信息</h2>
+      <div class="token-grid">
+        <div class="token-card">
+          <span class="token-label">链</span>
+          <span class="token-value">BNB Chain</span>
+          <span class="token-unit">BEP-20</span>
+        </div>
+        <div class="token-card">
+          <span class="token-label">合约</span>
+          <span class="token-value small">0x7d74...a6666</span>
+          <span class="token-unit">BscScan 可验证</span>
+        </div>
+        <div class="token-card">
+          <span class="token-label">交易</span>
+          <span class="token-value">PancakeSwap</span>
+          <span class="token-unit">去中心化交易</span>
+        </div>
+        <div class="token-card">
+          <span class="token-label">使命</span>
+          <span class="token-value">To Mars</span>
+          <span class="token-unit">多行星文明</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section buy" id="buy">
+    <div class="container">
+      <h2 class="section-title">🛒 如何购买</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>准备钱包</h3>
+          <p>安装 Trust Wallet 或 MetaMask，切换到 BNB Chain 网络。</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>获取 BNB</h3>
+          <p>在钱包中持有 BNB，用于支付交易 gas 和兑换 TERMINUS。</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>PancakeSwap 交易</h3>
+          <p>连接钱包，粘贴上方合约地址，即可兑换 TERMINUS。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section community" id="community">
+    <div class="container">
+      <h2 class="section-title">🌐 加入社区</h2>
+      <p class="community-text">与全球 TERMINUS 持有者一起，迈向火星。</p>
+      <div class="socials">
+        <a href="https://x.com" target="_blank" rel="noopener" class="social-link">𝕏 X / Twitter</a>
+        <a href="https://t.me" target="_blank" rel="noopener" class="social-link">✈️ Telegram</a>
+        <a href="https://bscscan.com/token/0x7d74a3497856d0f463af55cd489823a98dfa6666" target="_blank" rel="noopener" class="social-link">🔍 BscScan</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>TERMINUS · BNB Chain</p>
+      <p class="disclaimer">免责声明：本项目为 MEME 文化实验，不构成任何投资建议。加密货币波动极大，请自行承担风险。</p>
+      <p class="copyright">© 2026 TERMINUS 社区</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
