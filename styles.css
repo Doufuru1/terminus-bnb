@@ -29,69 +29,72 @@ body {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(86, 38, 138, 0.35) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(26, 92, 158, 0.35) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 90%, rgba(192, 38, 211, 0.25) 0%, transparent 45%),
+    radial-gradient(ellipse at 70% 20%, rgba(236, 72, 153, 0.2) 0%, transparent 40%),
+    linear-gradient(180deg, #0a0a12 0%, #0f0b1a 40%, #120b1e 70%, #0a0a12 100%);
   overflow: hidden;
 }
 
 .stars::before,
-.stars::after,
-.stars .layer {
+.stars::after {
   content: '';
   position: absolute;
-  top: 0;
+  top: -200%;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: -200%;
   background-repeat: repeat;
   pointer-events: none;
+  width: 100%;
+  height: 400%;
 }
 
 .stars::before {
   background-image:
-    radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0,0,0,0));
+    radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.9), rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 50px 160px, rgba(255,255,255,0.7), rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 90px 40px, rgba(255,255,255,0.9), rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 130px 80px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 160px 120px, rgba(255,255,255,0.7), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 25px 180px, rgba(255,255,255,0.6), rgba(0,0,0,0));
   background-size: 200px 200px;
-  animation: starMove 50s linear infinite;
+  animation: starMove 80s linear infinite;
 }
 
 .stars::after {
   background-image:
-    radial-gradient(1px 1px at 50px 50px, #fff, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 100px 150px, #eee, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 150px 20px, #fff, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 200px 100px, #ddd, rgba(0,0,0,0)),
-    radial-gradient(1px 1px at 250px 200px, #fff, rgba(0,0,0,0));
+    radial-gradient(1px 1px at 50px 50px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 100px 150px, rgba(255,255,255,0.7), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 150px 20px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 200px 100px, rgba(255,255,255,0.6), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 250px 200px, rgba(255,255,255,0.8), rgba(0,0,0,0));
   background-size: 250px 250px;
-  animation: starMove 100s linear infinite reverse;
+  animation: starMove 120s linear infinite reverse;
+}
+
+.stars .nebula {
+  position: absolute;
+  inset: -50%;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(124, 58, 237, 0.15) 0%, transparent 35%),
+    radial-gradient(circle at 70% 60%, rgba(14, 165, 233, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(236, 72, 153, 0.12) 0%, transparent 45%);
+  animation: nebulaMove 60s ease-in-out infinite alternate;
+  pointer-events: none;
 }
 
 @keyframes starMove {
   from { transform: translateY(0); }
-  to { transform: translateY(-2000px); }
+  to { transform: translateY(-50%); }
 }
 
-.four-logo-btn, .four-logo-small {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  vertical-align: middle;
-  margin: 0 4px;
-  object-fit: cover;
-  flex-shrink: 0;
-}
-
-.four-logo-btn {
-  width: 28px;
-  height: 28px;
-}
-
-.four-logo-small {
-  width: 20px;
-  height: 20px;
+@keyframes nebulaMove {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(-3%, -2%) scale(1.05); }
 }
 
 .nav {
@@ -150,25 +153,6 @@ body {
   text-align: center;
   padding: 8rem 2rem 4rem;
   position: relative;
-  background: url('assets/hero-bg.jpg') center center / cover no-repeat;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  z-index: 0;
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%);
-  z-index: 0;
 }
 
 .hero-glow {
@@ -185,11 +169,6 @@ body {
 }
 
 .hero-content { position: relative; z-index: 1; max-width: 900px; }
-
-.hero-content .tagline,
-.hero-content .hero-desc {
-  text-shadow: 0 2px 12px rgba(0,0,0,0.8);
-}
 
 .badge {
   display: inline-block;
